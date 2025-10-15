@@ -1,19 +1,16 @@
 <?php
-session_start();
-include "connectionOnDatabase.php"; 
+include "db_connection.php"; 
 
-if ($connection->error == false) {
-
+if (!$connection->connect_error) {
     if (isset($_POST["add_category"])) {
         $cat_name = $_POST["cat_name"];
-
         $sql = "INSERT INTO categories (name) VALUES ('$cat_name')";
         $result = $connection->query($sql);
 
         if ($result == true) {
-            echo "DONE";
+            echo "Category added successfully";
         } else {
-            echo "Faile". $connection->error;
+            echo "Failed: " . $connection->error;
         }
     }
 }
