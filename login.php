@@ -9,9 +9,9 @@
   <center>
     <h1>Hello in login page</h1>
         <?php
-            if(isset($_GET("statusCode"))){
-                if($_GET("statusCode")=="201"){
-                    echo "<br> Account Created </br>"
+            if(isset($_GET["statusCode"])){
+                if($_GET["statusCode"]=="201"){
+                    echo "<br> Account Created </br>";
                 }
             }
         ?>
@@ -25,7 +25,10 @@
       <input type="submit" name="login" value="login">
     </form>
 
-    <div style="color:red;"><?php echo $msg; ?></div>
+    <!-- <div style="color:red;">
+      </?//php echo $msg; ?> -->
+    <!-- </div> --> 
+   
   </center>
 </body>
 </html>

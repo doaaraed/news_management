@@ -11,6 +11,7 @@ if ($connection->error == false) {
     $result = $connection->query($sql);
 
     if ($result && $result->num_rows > 0) {
+      echo "log in done";
       $data = $result->fetch_assoc();
 
       if (password_verify($password, $data["password"])) {
