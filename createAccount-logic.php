@@ -1,6 +1,13 @@
 <?php
 include "connectionOnDatabase.php";
 
+if( $connection -> error == true){
+    echo "connection fail";
+} else {
+  print_r($_POST);
+    echo "connected";
+}
+
 function validateData($data){
   $data = trim($data);
   $data = htmlspecialchars($data);
@@ -19,10 +26,12 @@ if ($connection->error == false) {
 
     if ($result == true) {
       header("Location:login.php?statusCode=201");
-      exit;
+      // exit;
     } else {
       echo "fail";
     }
   }
 }
+  // print_r($_POST);
+
 ?>
